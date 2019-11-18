@@ -49,6 +49,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestHotel\ChaleItem.cs" />
+    <Compile Include="TestHotel\ChaleTest.cs" />
+    <Compile Include="TestHotel\ClienteTest.cs" />
+    <Compile Include="TestHotel\HospedagemTest.cs" />
+    <Compile Include="TestHotel\HospedagemServicoTest.cs" />
+    <Compile Include="TestHotel\ItemTest.cs" />
+    <Compile Include="TestHotel\ServicoTest.cs" />
+    <Compile Include="TestHotel\TelefoneTest.cs" />
     <Compile Include="UnitTestCodelab.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
