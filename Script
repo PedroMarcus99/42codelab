@@ -1,0 +1,63 @@
+create table Cliente(
+codCliente int primary key, 
+nomeCliente varchar(250), 
+rgCliente varchar(20),
+enderecoCliente varchar(100),
+bairroCliente varchar(50),
+cidadeCliente varchar(50),
+estadoCliente varchar(50),
+CEPCliente varchar(20),
+nascimentoCliente date
+);
+
+create table Telefone(
+telefone varchar(20) primary key, 
+codCliente int, 
+foreign key (codCliente) references Cliente(codCliente)
+);
+
+create table Hospedagem(
+codHospedagem int primary key, 
+codChale int, 
+estado varchar(50),
+dataInicio date, 
+dataFim date, 
+qtdPessoas int, 
+desconto decimal, 
+valorFinal decimal
+);
+
+create table Servico(
+codServico int primary key, 
+nomeServico varchar(50), 
+valorServico decimal
+);
+
+create table Chale(
+codChale int primary key,
+localizacao varchar, 
+capacidade int, 
+valorAltaEstacao decimal, 
+valorBaixaEstacao decimal
+);
+
+create table Item(
+nomeItem varchar(50) primary key,
+descricao decimal
+);
+
+create table Chale_Item(
+codChale int primary key,
+nomeItem varchar(50), 
+foreign key (codChale) references Chale (codChale),
+foreign key (nomeItem) references Item (nomeItem)
+);
+
+create table Hospedagem_Servico(
+codHospedagem int,
+dataServico int, 
+codServico int,
+primary key(codHospedagem, dataServico, codServico ),
+foreign key (codHospedagem) references Hospedagem (codHospedagem),
+foreign key (codServico) references Servico (codServico)
+);
