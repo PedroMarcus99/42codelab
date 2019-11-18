@@ -43,7 +43,7 @@ valorBaixaEstacao decimal
 
 create table Item(
 nomeItem varchar(50) primary key,
-descricao decimal
+descricao varchar(200)
 );
 
 create table Chale_Item(
@@ -55,7 +55,7 @@ foreign key (nomeItem) references Item (nomeItem)
 
 create table Hospedagem_Servico(
 codHospedagem int,
-dataServico int, 
+dataServico DateTime, 
 codServico int,
 primary key(codHospedagem, dataServico, codServico ),
 foreign key (codHospedagem) references Hospedagem (codHospedagem),
