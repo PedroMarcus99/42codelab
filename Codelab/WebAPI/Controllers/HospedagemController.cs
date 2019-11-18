@@ -9,18 +9,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class HospedagemController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
-        {
-            return "Pedro";
-        }
-
-        [HttpPost]
-        public void Post ()
-        {
-
-        }
     }
 }
