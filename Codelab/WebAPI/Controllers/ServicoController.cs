@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
     {
       List<Servico> servico = new List<Servico>();
 
-      using (SqlConnection conexao = new SqlConnection())
+      using (SqlConnection conexao = new SqlConnection()) //TODO: Falta colocar os dados da string de conexão.
       {
         conexao.Open();
         servico.Add(conexao.ExecuteScalar<Servico>($"SELECT * FROM SERVICO WHERE CODSERVICO = {codServico}"));
@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
     [HttpPost]
     public void Post(int codServico, string nomeServico, decimal valorServico)
     {
-      using (SqlConnection conexao = new SqlConnection())
+      using (SqlConnection conexao = new SqlConnection()) //TODO: Falta colocar os dados da string de conexão.
       {
         conexao.Open();
         conexao.Execute($@"INSERT INTO SERVICO (CODSERVICO, NOMESERVICO, VALORSERVICO ) VALUES({codServico}, '{nomeServico}', {valorServico}");
@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
     [HttpDelete]
     public void Delete(int codServico)
     {
-      using (SqlConnection conexao = new SqlConnection())
+      using (SqlConnection conexao = new SqlConnection()) //TODO: Falta colocar os dados da string de conexão.
       {
         conexao.Open();
         conexao.Execute($"DELETE SERVICO WHERE CODSERVICO = {codServico}");
